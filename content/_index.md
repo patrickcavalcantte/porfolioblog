@@ -5,5 +5,6 @@ title: "Creep.tech"
 ```
 > SISTEMA ONLINE
 > usuário: visitante autenticado
-> perfil carregado
+> perfil carregado com sucesso
+> bem-vinde
 ```
