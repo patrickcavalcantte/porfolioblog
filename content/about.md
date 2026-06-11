@@ -16,7 +16,7 @@ produtos surgem do encontro entre tecnologia, dados e compreensão das
 pessoas, transformando problemas complexos em experiências simples,
 acessíveis e significativas.
 
-Minhas obsessões intelectuais do momento: me tornando **entusiasta de código e de LLMs**, e sempre movido pela
+Venho me tornando **entusiasta de código e de LLMs** (especialmente IA local e estudos em IA soberana), e sempre sou movido pela
 ideia de criar coisas **divertidas e interativas** com
 programação. Nas horas vagas, essa curiosidade transborda para a
 **eletrônica e a automação**: montar, ligar fios e ver o mundo físico responder ao código.
