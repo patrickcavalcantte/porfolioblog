@@ -6,3 +6,7 @@
 # SO / editor
 .DS_Store
 Thumbs.db
+
+# Notas pessoais (não versionar / não publicar)
+FLUXO DE TRABALHO NO BLOGPROJETOS.txt
+/public_test/
