@@ -1,7 +1,8 @@
-# NEON//DEV — Portfólio + Blog
+# Creep.tech — Portfólio + Blog
 
-> Portfólio e blog pessoal do Patrick, com estética **cyberpunk** de terminal neon.
+> Portfólio e blog pessoal do Patrick, com estética **cyberpunk** e uma pegada de terminal do Linux.
 > Site estático gerado com [Hugo](https://gohugo.io) e publicado automaticamente no GitHub Pages.
+> ClaudeCode foi utilizado para pesquisa e aperfeiçoamento do projeto. 
 
 ### 🔗 No ar: https://patrickcavalcantte.github.io/porfolioblog/
 
@@ -129,4 +130,4 @@ Feito por **Patrick** — designer de produtos digitais e entusiasta de código.
 - Instagram: [@creep__tech](https://instagram.com/creep__tech)
 - GitHub: [@patrickcavalcantte](https://github.com/patrickcavalcantte)
 
-> Tecnologia soberana, código divertido e muita cara de terminal. `> logout`
+>Defensor de tecnologia soberana, código divertido e estética cyberpunk. `> logout`
