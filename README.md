@@ -5,11 +5,7 @@
 
 ### 🔗 No ar: https://patrickcavalcantte.github.io/porfolioblog/
 
-```
-> SISTEMA ONLINE
-> usuário: visitante autenticado
-> perfil carregado
-```
+![Captura de tela do NEON//DEV — home com estética cyberpunk de terminal neon](static/img/screenshot.png)
 
 ---
 
