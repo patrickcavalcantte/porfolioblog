@@ -1,6 +1,6 @@
 baseURL = "http://localhost:1313/"
 locale = "pt-br"
-title = "NEON//DEV"
+title = "Creep.tech"
 theme = "terminal"
 pagination.pagerSize = 5
 
@@ -27,13 +27,13 @@ pagination.pagerSize = 5
   avatar = "/img/sobremim.jpeg"
 
   [params.logo]
-    logoText = "NEON//DEV"
+    logoText = "Creep.tech"
     logoHomeLink = "/"
 
 [languages]
   [languages.pt-br]
     label = "Português"
-    title = "NEON//DEV"
+    title = "Creep.tech"
 
 [menu]
   [[menu.main]]

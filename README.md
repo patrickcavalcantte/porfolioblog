@@ -6,7 +6,7 @@
 
 ### 🔗 No ar: https://patrickcavalcantte.github.io/porfolioblog/
 
-![Captura de tela do NEON//DEV — home com estética cyberpunk de terminal neon](static/img/screenshot.png)
+![Captura de tela do Creep.tech — home com estética cyberpunk de terminal neon](static/img/screenshot.png)
 
 ---
 
