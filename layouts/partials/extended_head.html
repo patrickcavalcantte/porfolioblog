@@ -1,0 +1,6 @@
+{{- /* Camada cyberpunk própria: carregada por último (vence o main.css do
+       tema) e com fingerprint, então o cache do navegador invalida sozinho. */ -}}
+{{ with resources.Get "css-custom/neon.css" }}
+  {{ $neon := . | minify | fingerprint }}
+  <link rel="stylesheet" href="{{ $neon.RelPermalink }}">
+{{ end }}

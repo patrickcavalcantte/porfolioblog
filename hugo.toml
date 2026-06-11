@@ -1,0 +1,58 @@
+baseURL = "http://localhost:1313/"
+locale = "pt-br"
+title = "NEON//DEV"
+theme = "terminal"
+pagination.pagerSize = 5
+
+[markup.goldmark.renderer]
+  unsafe = true
+
+[params]
+  contentTypeName = "posts"
+  # quantos itens do menu mostrar antes de colapsar
+  showMenuItems = 4
+  fullWidthTheme = false
+  centerTheme = true
+  autoCover = true
+  showLastUpdated = false
+
+  subtitle = "// engenharia de software na fronteira do neon"
+  keywords = "portfolio, blog, cyberpunk, desenvolvedor, hugo"
+  readMore = "Acessar arquivo"
+  readOtherPosts = "Ver outros registros"
+  menuMore = "Mostrar mais"
+
+  # Resumo exibido na seção "Quem transmite" da home (aceita markdown)
+  bio = "Sou o **Patrick** — designer de produtos digitais, servidor público federal e entusiasta de código e LLMs. Crio coisas divertidas e interativas, do pixel ao circuito. Tem também uma versão minha que é bacharel em Letras."
+  avatar = "/img/sobremim.jpeg"
+
+  [params.logo]
+    logoText = "NEON//DEV"
+    logoHomeLink = "/"
+
+[languages]
+  [languages.pt-br]
+    label = "Português"
+    title = "NEON//DEV"
+
+[menu]
+  [[menu.main]]
+    identifier = "index"
+    name = "Index"
+    url = "/"
+    weight = 1
+  [[menu.main]]
+    identifier = "sobre"
+    name = "Sobre"
+    url = "/about/"
+    weight = 2
+  [[menu.main]]
+    identifier = "projetos"
+    name = "Projetos"
+    url = "/projects/"
+    weight = 3
+  [[menu.main]]
+    identifier = "blog"
+    name = "Blog"
+    url = "/posts/"
+    weight = 4

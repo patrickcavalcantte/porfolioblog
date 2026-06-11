@@ -1,0 +1,52 @@
+{{ define "main" }}
+
+  {{/* ---------- HERO (conteúdo do content/_index.md) ---------- */}}
+  {{ if .Content }}
+    <div class="index-content {{ if .Params.framed }}framed{{ end }}">
+      {{ .Content }}
+    </div>
+  {{ end }}
+
+  {{/* ---------- ÚLTIMOS REGISTROS DO BLOG (5 mais recentes) ---------- */}}
+  {{ $posts := first 5 (sort (where .Site.RegularPages "Type" "posts") "Date" "desc") }}
+  {{ with $posts }}
+    <section class="home-section">
+      <h2 class="home-section__title">&gt; tail -n 5 ~/blog</h2>
+      <div class="posts">
+        {{ range . }}
+          {{ partial "home-card.html" . }}
+        {{ end }}
+      </div>
+      <a class="read-more button inline" href="{{ "/posts/" | relLangURL }}">[ver todos os registros]</a>
+    </section>
+  {{ end }}
+
+  {{/* ---------- ÚLTIMOS PROJETOS (5 mais recentes) ---------- */}}
+  {{ $projetos := first 5 (sort (where .Site.RegularPages "Type" "projects") "Date" "desc") }}
+  {{ with $projetos }}
+    <section class="home-section">
+      <h2 class="home-section__title">&gt; ls ~/projetos --recent</h2>
+      <div class="posts">
+        {{ range . }}
+          {{ partial "home-card.html" . }}
+        {{ end }}
+      </div>
+      <a class="read-more button inline" href="{{ "/projects/" | relLangURL }}">[ver todos os projetos]</a>
+    </section>
+  {{ end }}
+
+  {{/* ---------- QUEM TRANSMITE (resumo do sobre, perto do footer) ---------- */}}
+  <section class="home-section quem-transmite">
+    <h2 class="home-section__title">// Quem transmite</h2>
+    <div class="quem-transmite__inner">
+      {{ with .Site.Params.avatar }}
+        <img class="avatar avatar--small" src="{{ . | strings.TrimPrefix "/" | absURL }}" alt="Avatar de quem transmite" />
+      {{ end }}
+      <div class="quem-transmite__bio">
+        {{ with .Site.Params.bio }}{{ . | markdownify }}{{ end }}
+        <a class="read-more button inline" href="{{ "/about/" | relLangURL }}">[acessar dossiê completo]</a>
+      </div>
+    </div>
+  </section>
+
+{{ end }}

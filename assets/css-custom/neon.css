@@ -1,0 +1,260 @@
+/* ============================================================
+   NEON//DEV — camada de efeitos cyberpunk
+   Carregado por ÚLTIMO via extended_head.html (com fingerprint,
+   então o cache do navegador é invalidado a cada mudança). É aqui
+   que a paleta é definida — caso contrário o main.css do tema vence.
+   ============================================================ */
+
+/* --- Paleta cyberpunk (palavra final sobre o main.css do tema) --- */
+:root {
+  --background: #0b0a14;          /* quase preto com tom roxo */
+  --foreground: #c8f7ff;          /* ciano pálido */
+  --accent: #05d9e8;              /* ciano neon */
+  --accent-alt: #ff2e88;          /* magenta neon (secundário) */
+  --code-border: rgba(5, 217, 232, 0.25);
+  --radius: 0;
+}
+
+/* --- Fundo: grade de neon + vinheta --- */
+body {
+  background-color: var(--background);
+  background-image:
+    linear-gradient(rgba(5, 217, 232, 0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(5, 217, 232, 0.04) 1px, transparent 1px),
+    radial-gradient(circle at 50% 0%, rgba(255, 46, 136, 0.10), transparent 60%);
+  background-size: 32px 32px, 32px 32px, 100% 100%;
+  position: relative;
+}
+
+/* --- Scanlines sutis sobre toda a tela --- */
+body::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 9999;
+  background: repeating-linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0) 0px,
+    rgba(0, 0, 0, 0) 2px,
+    rgba(0, 0, 0, 0.18) 3px,
+    rgba(0, 0, 0, 0) 4px
+  );
+  mix-blend-mode: multiply;
+}
+
+/* --- Títulos com brilho neon --- */
+h1, h2, h3 {
+  color: #ffffff;
+  text-shadow:
+    0 0 4px var(--accent),
+    0 0 12px rgba(5, 217, 232, 0.6);
+}
+
+h1 { letter-spacing: 0.02em; }
+
+/* --- Links com glow no hover --- */
+a {
+  text-decoration: none;
+  transition: text-shadow 0.15s ease, color 0.15s ease;
+}
+a:hover {
+  color: #ffffff;
+  text-shadow: 0 0 6px var(--accent), 0 0 14px var(--accent);
+}
+
+/* --- Logo / cabeçalho --- */
+.logo {
+  color: var(--accent);
+  text-shadow: 0 0 6px var(--accent), 0 0 16px rgba(5, 217, 232, 0.5);
+}
+
+/* --- Itens do menu --- */
+.navigation-menu__inner a:hover,
+.menu__dropdown a:hover {
+  color: var(--accent-alt);
+  text-shadow: 0 0 6px var(--accent-alt), 0 0 14px var(--accent-alt);
+}
+
+/* item da página atual em vermelho neon */
+.navigation-menu__inner a.active,
+.menu__dropdown a.active {
+  color: #ff2e88;
+  text-shadow: 0 0 6px #ff2e88, 0 0 16px rgba(255, 46, 136, 0.7);
+}
+
+/* --- Cards de post/projeto: borda neon e elevação no hover --- */
+.post {
+  border: 1px solid rgba(5, 217, 232, 0.18);
+  padding: 22px 26px;
+  background: linear-gradient(
+    180deg,
+    rgba(5, 217, 232, 0.03),
+    rgba(255, 46, 136, 0.02)
+  );
+  transition: border-color 0.18s ease, box-shadow 0.18s ease, transform 0.18s ease;
+}
+.post:hover {
+  border-color: var(--accent);
+  box-shadow:
+    0 0 0 1px var(--accent),
+    0 0 22px rgba(5, 217, 232, 0.35);
+  transform: translateY(-2px);
+}
+
+.post-title a {
+  color: #ffffff;
+  text-shadow: 0 0 6px var(--accent);
+}
+.post-title a:hover { color: var(--accent-alt); text-shadow: 0 0 8px var(--accent-alt); }
+
+/* --- Tags --- */
+.post-tags a,
+.post-tag {
+  display: inline-block;
+  border: 1px solid var(--accent-alt);
+  color: var(--accent-alt);
+  padding: 1px 8px;
+  margin-right: 6px;
+  font-size: 0.8rem;
+}
+.post-tags a:hover {
+  background: var(--accent-alt);
+  color: var(--background);
+  text-shadow: none;
+}
+
+/* --- Botão "ler mais" estilo terminal --- */
+.read-more a,
+a.read-more {
+  border: 1px solid var(--accent);
+  padding: 4px 14px;
+  display: inline-block;
+}
+.read-more a:hover {
+  background: var(--accent);
+  color: var(--background);
+  box-shadow: 0 0 16px rgba(5, 217, 232, 0.6);
+  text-shadow: none;
+}
+
+/* --- Blocos de código com glow de borda --- */
+pre {
+  box-shadow: inset 0 0 18px rgba(5, 217, 232, 0.08);
+  border-left: 3px solid var(--accent) !important;
+}
+
+/* --- Citações --- */
+blockquote {
+  border-color: var(--accent-alt);
+  background: rgba(255, 46, 136, 0.04);
+}
+blockquote::before { color: var(--accent-alt); }
+
+/* --- Glitch no título principal da home ao passar o mouse --- */
+.index-content h1:hover,
+.post-content h1:hover {
+  animation: neon-glitch 0.4s steps(2) infinite;
+}
+@keyframes neon-glitch {
+  0%   { text-shadow: 0 0 4px var(--accent), 2px 0 var(--accent-alt), -2px 0 var(--accent); }
+  50%  { text-shadow: 0 0 4px var(--accent), -2px 0 var(--accent-alt), 2px 0 var(--accent); }
+  100% { text-shadow: 0 0 4px var(--accent), 2px 0 var(--accent-alt), -2px 0 var(--accent); }
+}
+
+/* --- Avatar da página Sobre: moldura neon dupla --- */
+img.avatar {
+  display: block;
+  width: 220px;
+  height: 220px;
+  object-fit: cover;
+  margin: 10px 0 30px;
+  padding: 4px;
+  border: 2px solid var(--accent);
+  border-radius: 6px;
+  background: var(--background);
+  box-shadow:
+    0 0 0 2px var(--accent-alt),
+    0 0 18px rgba(5, 217, 232, 0.55),
+    0 0 32px rgba(255, 46, 136, 0.35);
+  transition: box-shadow 0.2s ease, transform 0.2s ease;
+}
+img.avatar:hover {
+  transform: translateY(-2px);
+  box-shadow:
+    0 0 0 2px var(--accent-alt),
+    0 0 26px rgba(5, 217, 232, 0.8),
+    0 0 44px rgba(255, 46, 136, 0.5);
+}
+
+/* --- Seções da home ---------------------------------------- */
+.home-section {
+  margin: 36px 0 10px;
+}
+/* aproxima a primeira seção do bloco "SISTEMA ONLINE" */
+.index-content { margin-bottom: 0; }
+.index-content + .home-section { margin-top: 12px; }
+.home-section__title {
+  display: inline-block;
+  margin-bottom: 10px;
+  padding-bottom: 4px;
+  border-bottom: 2px solid var(--accent);
+  text-shadow: 0 0 6px var(--accent), 0 0 14px rgba(5, 217, 232, 0.5);
+}
+.home-section .posts .post {
+  margin-bottom: 20px;
+}
+/* o "[ver todos...]" como botão de terminal */
+.home-section > .read-more {
+  display: inline-block;
+  margin-top: 4px;
+  border: 1px solid var(--accent);
+  padding: 4px 14px;
+}
+.home-section > .read-more:hover {
+  background: var(--accent);
+  color: var(--background);
+  box-shadow: 0 0 16px rgba(5, 217, 232, 0.6);
+  text-shadow: none;
+}
+
+/* --- Quem transmite ---------------------------------------- */
+.quem-transmite {
+  margin-top: 60px;
+  padding-top: 30px;
+  border-top: 1px dashed rgba(5, 217, 232, 0.4);
+}
+.quem-transmite__inner {
+  display: flex;
+  gap: 24px;
+  align-items: flex-start;
+  flex-wrap: wrap;
+}
+.quem-transmite__bio {
+  flex: 1;
+  min-width: 240px;
+}
+.quem-transmite__bio p {
+  margin-top: 0;
+}
+img.avatar.avatar--small {
+  width: 120px;
+  height: 120px;
+  margin: 0;
+  flex-shrink: 0;
+}
+
+/* --- Barra de rolagem --- */
+::-webkit-scrollbar { width: 10px; }
+::-webkit-scrollbar-track { background: var(--background); }
+::-webkit-scrollbar-thumb {
+  background: var(--accent);
+  box-shadow: 0 0 8px var(--accent);
+}
+
+/* Respeita quem prefere menos movimento */
+@media (prefers-reduced-motion: reduce) {
+  .index-content h1:hover,
+  .post-content h1:hover { animation: none; }
+  .post:hover { transform: none; }
+}

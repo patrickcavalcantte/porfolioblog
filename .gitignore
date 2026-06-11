@@ -1,0 +1,8 @@
+# Artefatos de build do Hugo
+/public/
+/resources/_gen/
+.hugo_build.lock
+
+# SO / editor
+.DS_Store
+Thumbs.db

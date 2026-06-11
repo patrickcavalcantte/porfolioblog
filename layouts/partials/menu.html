@@ -1,0 +1,47 @@
+{{- /* Override do tema: adiciona classe "active" ao item da página atual.
+       Dentro do range, `.` é o item de menu e `$` é a página atual. */ -}}
+{{- define "_menuLink" -}}
+  {{- $page := .page -}}
+  {{- $entry := .entry -}}
+  {{- $url := $entry.URL | relLangURL -}}
+  {{- $cur := $page.RelPermalink -}}
+  {{- $home := $page.Site.Home.RelPermalink -}}
+  {{- /* a home só ativa em correspondência exata; demais itens também por prefixo
+         (assim um post ativa "Blog" e um projeto ativa "Projetos") */ -}}
+  {{- $active := cond (eq $url $home) (eq $cur $home) (or (eq $cur $url) (hasPrefix $cur $url)) -}}
+  <li><a href="{{ $entry.URL }}" {{ if $entry.Params.NewTab }}target="_blank"{{ end }} class="{{ if $active }}active{{ end }}">{{ $entry.Name }}</a></li>
+{{- end -}}
+
+<nav class="navigation-menu">
+  <ul class="navigation-menu__inner menu--desktop">
+    {{ if or $.Site.Params.showMenuItems ( eq .Site.Params.showMenuItems 0 ) }}
+      {{ range first $.Site.Params.showMenuItems $.Site.Menus.main }}
+        {{ if not .HasChildren }}
+          {{ template "_menuLink" (dict "page" $ "entry" .) }}
+        {{ end }}
+      {{ end }}
+      {{ if gt (len $.Site.Menus.main) $.Site.Params.showMenuItems }}
+        <li>
+          <ul class="menu">
+            <li class="menu__trigger">{{ $.Site.Params.menuMore }}&nbsp;▾</li>
+            <li>
+              <ul class="menu__dropdown">
+                {{ range last (sub (len $.Site.Menus.main) $.Site.Params.showMenuItems) $.Site.Menus.main }}
+                  {{ if not .HasChildren }}
+                    {{ template "_menuLink" (dict "page" $ "entry" .) }}
+                  {{ end }}
+                {{ end }}
+              </ul>
+            </li>
+          </ul>
+        </li>
+      {{ end }}
+    {{ else }}
+      {{ range $.Site.Menus.main }}
+        {{ if not .HasChildren }}
+          {{ template "_menuLink" (dict "page" $ "entry" .) }}
+        {{ end }}
+      {{ end }}
+    {{ end }}
+  </ul>
+</nav>

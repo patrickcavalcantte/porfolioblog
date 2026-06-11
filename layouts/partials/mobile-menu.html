@@ -1,0 +1,25 @@
+{{- /* Override do tema: adiciona classe "active" ao item da página atual. */ -}}
+<ul class="menu menu--mobile">
+  <li class="menu__trigger">Menu&nbsp;▾</li>
+  <li>
+    <ul class="menu__dropdown">
+      {{ range $.Site.Menus.main }}
+        {{ if not .HasChildren }}
+          {{ $url := .URL | relLangURL }}
+          {{ $cur := $.RelPermalink }}
+          {{ $home := $.Site.Home.RelPermalink }}
+          {{ $active := cond (eq $url $home) (eq $cur $home) (or (eq $cur $url) (hasPrefix $cur $url)) }}
+          <li><a href="{{ .URL }}" class="{{ if $active }}active{{ end }}">{{ .Name }}</a></li>
+        {{ end }}
+      {{ end }}
+      {{ if and $.Site.Params.showLanguageSelector (len $.Site.Home.AllTranslations) }}
+        <hr />
+        {{ range $.Site.Home.AllTranslations }}
+          <li>
+            <a href="{{ .Permalink }}">{{ .Language.LanguageName }}</a>
+          </li>
+        {{ end }}
+      {{ end }}
+    </ul>
+  </li>
+</ul>

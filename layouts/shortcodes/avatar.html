@@ -1,0 +1,3 @@
+{{- /* Avatar com caminho ciente da baseURL (funciona na raiz e em subpath
+       do GitHub Pages). Uso: {{< avatar src="/img/x.jpg" alt="..." >}} */ -}}
+<img class="avatar" src="{{ .Get "src" | strings.TrimPrefix "/" | absURL }}" alt="{{ .Get "alt" | plainify }}" />
