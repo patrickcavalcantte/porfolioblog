@@ -28,8 +28,8 @@ Pré-requisito: [Hugo **Extended**](https://gohugo.io/installation/) 0.123+ inst
 
 ```bash
 # clone o repositório
-git clone https://github.com/patrickcavalcantte/porfolioblog.git
-cd porfolioblog
+git clone https://github.com/patrickcavalcantte/creeptech.git
+cd creeptech
 
 # sobe o servidor de desenvolvimento (com live-reload)
 hugo server --buildDrafts
