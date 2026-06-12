@@ -16,7 +16,7 @@ pagination.pagerSize = 5
   autoCover = true
   showLastUpdated = false
 
-  subtitle = "// engenharia de software na fronteira do neon"
+  subtitle = "// tecnologia, classe, gênero e muita experimentação"
   keywords = "portfolio, blog, cyberpunk, desenvolvedor, hugo"
   readMore = "Acessar arquivo"
   readOtherPosts = "Ver outros registros"
