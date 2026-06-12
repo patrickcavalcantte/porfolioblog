@@ -1,3 +1,10 @@
+---
+title: "Da Lógica Formal aos LLMs: A Evolução da Inteligência Artificial"
+date: 2026-06-12
+description: "De Aristóteles ao ChatGPT — um estudo aprofundado sobre as fases históricas e técnicas que moldaram a IA moderna, dos sistemas especialistas ao Deep Learning e aos Transformers."
+tags: ["IA", "LLM", "Machine Learning", "Deep Learning", "Tecnologia"]
+---
+
 # Da Lógica Formal aos Modelos de Linguagem de Grande Escala (LLMs): Um Estudo Aprofundado sobre a Evolução da Inteligência Artificial
 
 ## Introdução
