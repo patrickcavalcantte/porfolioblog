@@ -4,7 +4,7 @@
 > Site estático gerado com [Hugo](https://gohugo.io) e publicado automaticamente no GitHub Pages.
 > ClaudeCode foi utilizado para pesquisa e aperfeiçoamento do projeto. 
 
-### 🔗 No ar:http://creeptech.com.br/
+### 🔗 No ar: https://creeptech.com.br/
 
 ![Captura de tela do Creep.tech — home com estética cyberpunk de terminal neon](static/img/screenshot.png)
 
