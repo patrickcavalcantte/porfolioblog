@@ -1,5 +1,5 @@
 ---
-title: "Construindo este blog cyberpunk com Hugo"
+title: "Construindo o blog do Creeptech com Hugo"
 date: 2026-06-11
 description: "Como montei um portfólio + blog estático, rápido e com cara de terminal neon usando Hugo."
 tags: ["Hugo", "Go", "Cyberpunk", "Web", "Tutorial"]
